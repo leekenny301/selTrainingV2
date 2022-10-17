@@ -11,7 +11,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class assignment6 {
+public class Assignment6 {
     WebDriver driver;
 
     @BeforeTest

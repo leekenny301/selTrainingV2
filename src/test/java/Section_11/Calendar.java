@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 import java.util.Objects;
 
-public class calendar {
+public class Calendar {
     public static void main(String[] args){
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();

@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class tabsHandling {
+public class TabsHandling {
 
     public static void main(String[] args) throws InterruptedException {
 //1. Give me the count of links on the page.

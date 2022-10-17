@@ -21,7 +21,7 @@ ii. Print number of columns
 iii. Print 2nd row of data
  */
 
-public class assignment7 {
+public class Assignment7 {
 
     WebDriver driver;
     @FindBy(css = "table[name='courses'] tr")

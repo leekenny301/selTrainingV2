@@ -1,12 +1,10 @@
 package section_13;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.bouncycastle.tsp.TSPUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,11 +13,9 @@ import org.testng.asserts.SoftAssert;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
-import java.time.Duration;
 import java.util.List;
 
-public class automateBrokenLink {
+public class AutomateBrokenLink {
 
     WebDriver driver;
     SoftAssert softAssert = new SoftAssert();

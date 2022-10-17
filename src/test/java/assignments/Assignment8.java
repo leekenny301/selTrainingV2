@@ -18,7 +18,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
 
-public class assignment8 {
+public class Assignment8 {
     WebDriver driver;
     WebDriverWait wait;
     @FindBy(css = "#autocomplete")

@@ -1,18 +1,23 @@
 package Section_12;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
-public class scrollingJsExecutor {
-    private WebDriver driver;
-    private JavascriptExecutor js;
+public class TableGrids {
+    WebDriver driver;
+    int sum;
+    String totalAmountText;
+    int totalAmount;
 
     @BeforeTest
     public void setup(){
@@ -20,18 +25,21 @@ public class scrollingJsExecutor {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        js = (JavascriptExecutor) driver;
     }
 
     @Test
-    public void test() throws InterruptedException {
+    public void test(){
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-        //scroll down by 500 pixels
-        js.executeScript("window.scrollBy(0, 500)");
-        Thread.sleep(2000);
+        List<WebElement> amount = driver.findElements(By.cssSelector(".tableFixHead td:nth-child(4)"));
 
-        //find element with class name tableFixedHead, then scroll to top by 5k pixels
-        js.executeScript("document.querySelector('.tableFixHead').scrollTop=5000");
+        for (int i = 0; i<amount.size(); i++){
+            sum += Integer.parseInt(amount.get(i).getText());
+        }
+
+        totalAmountText = driver.findElement(By.cssSelector(".totalAmount")).getText();
+        totalAmount = Integer.parseInt(totalAmountText.split(": ")[1]);
+
+        Assert.assertEquals(totalAmount, sum);
     }
 
     @AfterTest

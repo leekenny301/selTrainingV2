@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class deleteCookies {
+public class DeleteCookies {
     WebDriver driver;
 
     @BeforeTest
